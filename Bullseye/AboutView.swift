@@ -13,6 +13,7 @@ struct AboutView: View {
         func body(content: Content) -> some View {
             content
             .font(Font.custom("Arial Rounded MT Bold", size: 30))
+                .foregroundColor(Color.black)
                 .padding(.top, 20)
                 .padding(.bottom, 20)
         }
@@ -22,6 +23,7 @@ struct AboutView: View {
         func body(content: Content) -> some View {
             content
             .font(Font.custom("Arial Rounded MT Bold", size: 16))
+                .foregroundColor(Color.black)
                 .padding(.leading, 60)
                 .padding(.trailing, 60)
                 .padding(.bottom, 20)
@@ -32,7 +34,7 @@ struct AboutView: View {
         Group {
         VStack {
             Text("🎯 Bullseye 🎯").modifier(HeadingTextStyle())
-            Text("This is Bullseye, the game where you can earn points and earn fame by dragging a slider.").modifier(BodyTextStyle())
+            Text("This is Bullseye, the game where you can earn points and earn fame by dragging a slider.").lineLimit(nil).multilineTextAlignment(.center).modifier(BodyTextStyle())
             Text("Your goal is to place the slider as close as possible to the target value.  The closer you are, the more points you score.").modifier(BodyTextStyle()).lineLimit(nil).multilineTextAlignment(.center)
             Text("Enjoy!").modifier(BodyTextStyle()).lineLimit(nil)
         }
